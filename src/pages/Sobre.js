@@ -1,0 +1,1 @@
+<text>Eu amo minha namorada </text>

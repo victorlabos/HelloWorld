@@ -1,34 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+import Home from './src/pages/Home';
+import Sobre from './src/pages/Sobre';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-     <View style={styles.titulo} >olá mundo</View>
-
-      <text>
-      <h2>Oi meu nome é Victor e esse é meu primeiro AAP no React </h2>
-      </text>
-
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Sobre" component={Sobre} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ccc',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  
-  titulo:{
-    backgroundColor: '#483D8B',	
-    padding: '12',
-    borderBottomLeftRadius: '6',
-    fontSize: 100
-  }
-
-
-});
